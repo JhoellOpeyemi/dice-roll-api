@@ -1,0 +1,66 @@
+/* ============================================================
+   DiceFace – individual die rendering
+   ============================================================ */
+
+.dice-face {
+  width: 72px;
+  height: 72px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: var(--shadow-die), inset 0 -3px 0 rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: land 350ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  flex-shrink: 0;
+}
+
+@keyframes land {
+  from {
+    opacity: 0;
+    transform: scale(0.4) rotate(-20deg) translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg) translateY(0);
+  }
+}
+
+/* ---------- Non-d6 number display ---------- */
+.dice-face__number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.dice-face__value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  line-height: 1;
+}
+
+.dice-face__sides {
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: #6060a0;
+  margin-top: 2px;
+}
+
+/* ---------- d6 pips ---------- */
+.d6-pips {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.d6-pip {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  background: #1a1a2e;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}

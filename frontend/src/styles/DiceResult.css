@@ -1,0 +1,67 @@
+/* ============================================================
+   DiceResult – roll outcome display
+   ============================================================ */
+
+.dice-result {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: var(--shadow-card);
+  animation: fade-up 300ms ease both;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Dice faces row ---------- */
+.dice-result__faces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+/* ---------- Summary ---------- */
+.dice-result__summary {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.dice-result__total {
+  font-size: 1.5rem;
+  color: var(--color-text-muted);
+}
+
+.dice-result__total strong {
+  color: var(--color-text);
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.dice-result__message {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-accent-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.dice-result__emoji {
+  font-size: 1.4rem;
+}

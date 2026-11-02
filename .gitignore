@@ -1,0 +1,41 @@
+# Node / frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.env
+frontend/.env.*
+frontend/*.local
+frontend/**/*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# AWS SAM / serverless build artifacts
+.api
+.sam
+.packaged.yaml
+*.zip
+
+# Sensitive configuration
+.env
+.env.*
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+config/*.json
+secrets/
+
+# Optional: ignore local deployment config if it includes environment-specific values
+api/samconfig.toml

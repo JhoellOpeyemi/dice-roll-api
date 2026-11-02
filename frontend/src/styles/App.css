@@ -1,0 +1,140 @@
+/* ============================================================
+   App – root layout and global tokens
+   ============================================================ */
+
+:root {
+  --color-bg: #0f0f1a;
+  --color-surface: #1a1a2e;
+  --color-surface-raised: #16213e;
+  --color-accent: #e94560;
+  --color-accent-hover: #ff6b6b;
+  --color-text: #eaeaea;
+  --color-text-muted: #9090a0;
+  --color-border: #2a2a4a;
+  --color-error-bg: #3d1a1a;
+  --color-error-border: #e94560;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-die: 0 6px 18px rgba(0, 0, 0, 0.5);
+
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 1rem;
+}
+
+/* ---------- App shell ---------- */
+.app {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ---------- Header ---------- */
+.app__header {
+  text-align: center;
+}
+
+.app__logo {
+  display: block;
+  font-size: 3.5rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+.app__title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #e94560, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.app__subtitle {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+/* ---------- Main content ---------- */
+.app__main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ---------- Error ---------- */
+.app__error {
+  background: var(--color-error-bg);
+  border: 1px solid var(--color-error-border);
+  border-radius: var(--radius-md);
+  padding: 0.875rem 1.25rem;
+  color: #ff8a8a;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ---------- Loading ---------- */
+.app__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  padding: 2rem 0;
+}
+
+.app__spinner {
+  font-size: 2rem;
+  display: inline-block;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ---------- Footer ---------- */
+.app__footer {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--color-border);
+}
